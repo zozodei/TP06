@@ -22,6 +22,11 @@ public class Usuario
         this.Foto = Foto;
     }
 
+    public Usuario ()
+    {
+        
+    }
+
 
     public int obtenerEdad () 
     {

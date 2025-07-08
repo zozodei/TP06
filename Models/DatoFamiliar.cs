@@ -18,4 +18,9 @@ public class DatoFamiliar
         this.Descripcion = Descripcion;
     }
 
+    public DatoFamiliar ()
+    {
+        
+    }
+
 } 
