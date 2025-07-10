@@ -15,16 +15,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+         int existeUsuario;
+        if ( HttpContext.Session.GetString ("IdUser") != null ) 
+        {
+            existeUsuario  = Convert.ToInt32(HttpContext.Session.GetString ("IdUser"));
+            ViewBag.Usuario = BD.GetUsuario(existeUsuario);
+        } 
         return View();
     }
-    public IActionResult InicioSesion (string Email, string Contraseña) 
-    {
-        int existeUsuario;
-        existeUsuario = BD.Login(Email,Contraseña);
-        
-
-       
-    }
+    
 
     public IActionResult traerDatoInteres(int id)
     {
