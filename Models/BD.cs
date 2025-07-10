@@ -8,13 +8,13 @@ public static class BD
     private static string _connectionString = @"Server=localhost;DataBase=NombreBase;Integrated Security = True;TrustServerCertificate = True;";
 
 
-    static int Login(string email, string contraseña)
+    static int Login(string Email, string Contraseña)
     {
         int ID=-1;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT ID FROM Usuarios WHERE email = @pEmail AND contraseña = @pContraseña";
-            ID = connection.QueryFirstOrDefault<int>(query, new {pEmail = email, pContraseña = contraseña});
+            ID = connection.QueryFirstOrDefault<int>(query, new {pEmail = Email, pContraseña = Contraseña});
         }
         return ID;
 
@@ -30,6 +30,7 @@ public static class BD
         }
         return usuario;
     }
+
     static List<DatoFamiliar> GetDatoFamiliar(int id)
     {
         List<DatoFamiliar> familiares = null;

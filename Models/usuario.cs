@@ -26,8 +26,6 @@ public class Usuario
     {
         
     }
-
-
     public int obtenerEdad () 
     {
         DateTime hoy;
