@@ -20,16 +20,15 @@ public class HomeController : Controller
         {
             existeUsuario  = Convert.ToInt32(HttpContext.Session.GetString ("IdUser"));
             ViewBag.Usuario = BD.GetUsuario(existeUsuario);
-        } else if () {}
+        } 
         return View();
     }
-
-
+    
 
     public IActionResult InicioSesion (string Email, string Contraseña) 
     {
-
-       
+        int existeUsuario;
+        existeUsuario = BD.Login(Email,Contraseña);
     }
 
 }
