@@ -7,11 +7,11 @@ public class Usuario
     public string Apellido {get; private set;}
     public string Email {get; private set;}
     public string Contraseña {get; private set;}
-    public DataTime FechaNacimiento {get; private set;}
+    public DateTime FechaNacimiento {get; private set;}
     public string Foto {get; private set;}
 
 
-    public Usuario (int Id, string Nombre, string Apellido, string Email, string Contraseña, DataTime FechaNacimiento, string Foto)
+    public Usuario (int Id, string Nombre, string Apellido, string Email, string Contraseña, DateTime FechaNacimiento, string Foto)
     {
         this.Id = Id;
         this.Nombre = Nombre;
@@ -30,11 +30,9 @@ public class Usuario
 
     public int obtenerEdad () 
     {
-        int edad;
-        DataTime hoy;
-        hoy = DataTime.Today;
+        DateTime hoy;
+        hoy = DateTime.Today;
         int edad = hoy.Year - FechaNacimiento.Year;
-
         if (hoy.Month < FechaNacimiento.Month || 
            (hoy.Month == FechaNacimiento.Month && hoy.Day < FechaNacimiento.Day))
         {
