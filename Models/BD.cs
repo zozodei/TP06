@@ -8,7 +8,7 @@ public static class BD
     private static string _connectionString = @"Server=localhost;DataBase=NombreBase;Integrated Security = True;TrustServerCertificate = True;";
 
 
-    static int Login(string Email, string Contraseña)
+    public static int Login(string Email, string Contraseña)
     {
         int ID=-1;
         using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -20,7 +20,7 @@ public static class BD
 
     }
 
-    static Usuario GetUsuario(int ID)
+    public static Usuario GetUsuario(int ID)
     {
         Usuario usuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
