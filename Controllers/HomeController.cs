@@ -17,6 +17,15 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult InicioSesion (string Email, string Contraseña) 
+    {
+        int existeUsuario;
+        existeUsuario = BD.Login(Email,Contraseña);
+        
+
+       
+    }
+
     public IActionResult traerDatoInteres(int id)
     {
         List<DatoInteres> datosInteres = BD.GetDatoInteres(id);
