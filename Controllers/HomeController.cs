@@ -26,18 +26,26 @@ public class HomeController : Controller
 
     public IActionResult InicioSesion (string Email, String Contraseña) 
     {
-        HttpContext.Session.SetString ("IdUser")
-        BD.Login (Email, Contraseña);
-
-
-
+        
+        int id = BD.Login (Email, Contraseña);
+        if (id >-1)
+        {
+            HttpContext.Session.SetString ("IdUser", id.ToString());
+             ViewBag.Usuario = BD.GetUsuario(id);
+            return View ("Logueado");
+        }
+        else
+        {
+            return View("Index");
+        }
+        
     }
 
 
     public IActionResult cerrarSesion () 
     {
         HttpContext.Session.Remove("IdUser");
-        return ("Index"); 
+        return View ("Index"); 
     }
 
       public IActionResult traerDatoInteres(int id)
