@@ -4,14 +4,16 @@
 
 @if (ViewBag.Usuario != null)
 {
-     <h3>Bienvenido </h3>
-    
+     <h3>Bienvenido @ViewBag.Usuario.Nombre</h3>   
 } else 
 {
+   
+    
     
 }
 
- <h3>git</h3>
+<form action='@Url.Action("", "Home")' method ="post"></form>
+
 
 
 

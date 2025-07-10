@@ -24,6 +24,22 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult InicioSesion (string Email, String Contraseña) 
+    {
+        HttpContext.Session.SetString ("IdUser")
+        BD.Login (Email, Contraseña);
+
+
+
+    }
+
+
+    public IActionResult cerrarSesion () 
+    {
+        HttpContext.Session.Remove("IdUser");
+        return ("Index"); 
+    }
+
       public IActionResult traerDatoInteres(int id)
     {
         List<DatoInteres> datosInteres = BD.GetDatoInteres(id);
