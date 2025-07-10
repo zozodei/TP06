@@ -2,11 +2,17 @@
     ViewData["Title"] = "Index";
 }
 
+
+<img src="" alt="">
+
 @if (ViewBag.Usuario != null)
 {
      <h3>Bienvenido @ViewBag.Usuario.Nombre</h3>  
-        <a href='@Url.Action("CerrarSesion", "Home")'>LogOut</a>
-} else 
+     <a href="Logueado.cshtml">Datos Personales</a>
+    <a href='@Url.Action("CerrarSesion", "Home")'>LogOut</a>
+}
+
+else 
 {
    <form action='@Url.Action("InicioSesion", "Home")' method ="post">
         Email: <input type="text" name = "Email">

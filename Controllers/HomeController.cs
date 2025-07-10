@@ -26,7 +26,6 @@ public class HomeController : Controller
 
     public IActionResult InicioSesion (string Email, String Contraseña) 
     {
-        
         int id = BD.Login (Email, Contraseña);
         if (id >-1)
         {
@@ -37,8 +36,7 @@ public class HomeController : Controller
         else
         {
             return View("Index");
-        }
-        
+        } 
     }
 
 
