@@ -37,7 +37,22 @@ public class HomeController : Controller
         else
         {
             ViewBag.mensaje = "No tiene datos de interes";
-            return View("???");
+            return View("");
+        }
+        
+    }
+    public IActionResult traerDatoFamiliar(int id)
+    {
+        List<DatoFamiliar> datosFamiliares = BD.GetDatoFamiliar(id);
+        if (datosFamiliares != null)
+        {
+            ViewBag.listaDatos = datosFamiliares;
+            return View("");
+        }
+        else
+        {
+            ViewBag.mensaje = "No tiene datos de interes";
+            return View("");
         }
     }
 }
