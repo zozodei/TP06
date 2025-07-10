@@ -8,7 +8,7 @@ public static class BD
     private static string _connectionString = @"Server=localhost;DataBase=NombreBase;Integrated Security = True;TrustServerCertificate = True;";
 
 
-    static int Login(string email, string contraseña)
+    public static int Login(string email, string contraseña)
     {
         int ID=-1;
         using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -20,7 +20,7 @@ public static class BD
 
     }
 
-    static Usuario GetUsuario(int ID)
+    public static Usuario GetUsuario(int ID)
     {
         Usuario usuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -30,7 +30,7 @@ public static class BD
         }
         return usuario;
     }
-    static List<DatoFamiliar> GetDatoFamiliar(int id)
+    public static List<DatoFamiliar> GetDatoFamiliar(int id)
     {
         List<DatoFamiliar> familiares = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -41,7 +41,7 @@ public static class BD
         return familiares;
     }
     
-    static List<DatoInteres> GetDatoInteres(int id)
+    public static List<DatoInteres> GetDatoInteres(int id)
     {
         List<DatoInteres> datosInteres = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))

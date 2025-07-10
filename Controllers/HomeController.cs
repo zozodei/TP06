@@ -17,4 +17,18 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult traerDatoInteres(int id)
+    {
+        List<DatoInteres> datosInteres = BD.GetDatoInteres(id);
+        if (datosInteres != null)
+        {
+            ViewBag.listaDatos = datosInteres;
+            return View("");
+        }
+        else
+        {
+            ViewBag.mensaje = "No tiene datos de interes";
+            return View("???");
+        }
+    }
 }
