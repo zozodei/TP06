@@ -1,23 +1,104 @@
-html {
-  font-size: 14px;
-  min-height: 100%;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  padding: 10px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+header img {
+  height: 150px;
+  border-radius: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+  }
+
+  header img {
+      margin-bottom: 10px;
   }
 }
+
+
+html, body {
+  height: 100%;         /* que el body ocupe el 100% de la altura */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header y footer altura automática */
+header, footer {
+  flex-shrink: 0;
+}
+
+/* MAIN ocupa el resto */
+main {
+  flex-grow: 1;               /* ocupa todo el espacio disponible */
+  padding: 20px;
+  background-color: #f9f9f9;  /* solo para visualizarlo */
+  background-image: url("/Imagenes/Inicio.jpg");
+  background-repeat: no-repeat;       
+  background-size: cover;              
+  background-position: center; 
+}
+
+form 
+{
+  background-color: #f9f9f9;
+  width: 30%;
+}
+
 
 body {
   margin: 10px;
   padding: 10px;
+  
 }
 
 
 footer {
   margin-top: 10px;
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: lightblue;
   border-top: 1px solid #e9ecef;
 }
